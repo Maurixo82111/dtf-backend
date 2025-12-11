@@ -34,7 +34,7 @@ def generar_semitono(image, lpi=45, angle=45):
     
     halftone_final = halftone_final.crop((left, top, left + w_orig, top + h_orig))
     
-    # CRÍTICO: Convertir a 'L' para que coincida con los canales CMYK
+    # CRÍTICO: Convertir a 'L' para que coincida con los canales CMYK y arreglar 'mode mismatch'
     return halftone_final.convert('L')
 
 def procesar_dtf_pro(image_bytes, lpi):
